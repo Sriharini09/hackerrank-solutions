@@ -6,7 +6,7 @@
 # Platform    HackerRank
 # Language    python3
 # Status      Accepted
-# Submitted   2026-08-13, 09:56 a.m.
+# Submitted   2026-08-13, 09:57 a.m.
 # ──────────────────────────────────────────────────
 
 from sklearn.preprocessing import PolynomialFeatures
