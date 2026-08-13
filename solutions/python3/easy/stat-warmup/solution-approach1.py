@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 10:02 a.m.
+# Technique   frequency-map-and-sorting
+# Time        O(N log N)
+# Space       O(N)
+# Insight     The implementation calculates descriptive statistics by sorting the array for the median and using a frequency map to identify the smallest mode among those with the highest occurrence count.
+# Interview   Before: "How would you calculate the mode if multiple values share the same frequency?" After: "I would use a hash map to track frequencies, then select the minimum key among those with the maximum frequency, resulting in O(N) time for the mode and O(N log N) overall due to sorting."
+# Pitfalls    (1) Failing to use the numerically smallest integer when multiple modes exist as required by the problem statement.  (2) Incorrectly calculating the population standard deviation by using N-1 instead of N as specified in the formula.  (3) Rounding errors when formatting output to one decimal place instead of using the required 0.0 format.
 # ──────────────────────────────────────────────────
 
 import math
