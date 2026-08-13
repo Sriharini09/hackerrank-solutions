@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 10:21 a.m.
+# Technique   probabilistic-case-summation
+# Time        O(1)
+# Space       O(1)
+# Insight     The total probability of drawing exactly two red balls and one black ball is the sum of the probabilities of the three mutually exclusive scenarios where exactly one urn yields a black ball.
+# Interview   Before: "How would you calculate the probability of a specific combination of independent events?" After: "I sum the probabilities of all disjoint outcomes that satisfy the condition. Here, it is O(1) time to compute the three cases: (B,R,R), (R,B,R), and (R,R,B)."
+# Pitfalls    (1) Failing to account for all three mutually exclusive permutations of the two red and one black ball outcome.  (2) Incorrectly calculating the total number of balls in each urn, leading to wrong denominators for the individual fractions.
 # ──────────────────────────────────────────────────
 
 from fractions import Fraction
