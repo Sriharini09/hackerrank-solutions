@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 10:18 a.m.
+# Technique   brute-force-nested-loops
+# Time        O(1)
+# Space       O(1)
+# Insight     The algorithm iterates through all possible outcomes of two six-sided dice to count pairs that satisfy the distinctness and sum constraints.
+# Interview   Before: "How would you calculate the probability of a specific sum with two dice?" After: "I iterate through all 36 possible outcomes, filtering for the condition where dice values are distinct and sum to 6, resulting in O(1) time complexity."
+# Pitfalls    (1) Failing to exclude cases where d1 equals d2 when calculating the sum of 6.  (2) Incorrectly assuming the total sample space is less than 36 for two fair dice.
 # ──────────────────────────────────────────────────
 
 from math import gcd
