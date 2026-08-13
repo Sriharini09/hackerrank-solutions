@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 10:26 a.m.
+# Technique   combinatorial-probability-summation
+# Time        O(1)
+# Space       O(1)
+# Insight     The total probability is calculated by summing the mutually exclusive events of drawing a red ball from the first bag and two black balls from the second, or a black ball from the first and one red and one black from the second.
+# Interview   Before: "How would you calculate the probability of a combined event across two independent bags?" After: "I partition the problem into disjoint cases based on the first draw, then use combinations to find the probability of each outcome in O(1) time."
+# Pitfalls    (1) Failing to account for both mutually exclusive scenarios where the red ball originates from either the first or the second bag.  (2) Incorrectly applying the combination formula by using permutations instead of combinations for drawing balls from the second bag.
 # ──────────────────────────────────────────────────
 
 from fractions import Fraction
