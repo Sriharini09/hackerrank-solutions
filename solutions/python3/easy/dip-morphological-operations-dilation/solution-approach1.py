@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 10:38 a.m.
+# Technique   3x3-structuring-element-dilation
+# Time        O(R * C)
+# Space       O(R * C)
+# Insight     The algorithm performs morphological dilation by setting a pixel in the output grid to one if any pixel within its 3x3 neighborhood in the input grid is one.
+# Interview   Before: "How would you implement morphological dilation for a binary image?" After: "I iterate through each pixel, and if it is one, I mark its 3x3 neighborhood in a new grid as one. This O(R*C) approach correctly handles boundary conditions by checking index bounds before updating the result."
+# Pitfalls    (1) Failing to check boundary conditions when applying the 3x3 structuring element, which causes index out of bounds errors.  (2) Updating the original image matrix during iteration instead of using a separate result matrix, which leads to incorrect dilation propagation.  (3) Misinterpreting the origin of the structuring element, which shifts the dilated output incorrectly.
 # ──────────────────────────────────────────────────
 
 # Read the binary image
