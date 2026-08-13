@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 10:39 a.m.
+# Technique   sliding-window-morphological-erosion
+# Time        O(R * C)
+# Space       O(R * C)
+# Insight     The algorithm sets a pixel to one if and only if all pixels within the 3x3 neighborhood centered at that coordinate are one in the original image.
+# Interview   Before: "How would you implement morphological erosion for a binary image?" After: "I iterate through the image, excluding the boundary pixels, and check if every pixel in the 3x3 neighborhood is one. This O(R * C) approach ensures the structuring element is fully contained within the foreground."
+# Pitfalls    (1) Failing to exclude the image boundaries, which causes an index out of bounds error when accessing the 3x3 neighborhood.  (2) Incorrectly assuming the structuring element origin can be placed on the image border without padding.  (3) Miscounting the final result by including pixels that were set to zero during the erosion process.
 # ──────────────────────────────────────────────────
 
 image = [
