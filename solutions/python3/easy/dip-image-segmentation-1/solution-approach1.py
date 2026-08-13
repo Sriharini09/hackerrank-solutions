@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 10:30 a.m.
+# Technique   breadth-first-search-connected-components
+# Time        O(R * C)
+# Space       O(R * C)
+# Insight     The algorithm identifies connected components by performing a breadth-first search starting from each unvisited object pixel and marking all reachable 4-connected neighbors as visited.
+# Interview   Before: "How would you count distinct objects in a binary grid?" After: "I use BFS to traverse each connected component of 1s, ensuring each pixel is visited once. This approach runs in O(R * C) time, where R and C are the grid dimensions, correctly handling 4-connectivity constraints."
+# Pitfalls    (1) Confusing 4-connectivity with 8-connectivity by including diagonal neighbors in the direction list.  (2) Failing to mark the starting pixel as visited before adding it to the queue, leading to redundant processing.  (3) Incorrectly handling grid boundaries when checking neighbor coordinates.
 # ──────────────────────────────────────────────────
 
 from collections import deque
